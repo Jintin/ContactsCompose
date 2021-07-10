@@ -19,8 +19,8 @@ import androidx.compose.ui.unit.dp
 import com.jintin.contactscompose.data.ContactData
 import com.jintin.contactscompose.ui.theme.ContactsComposeTheme
 import com.jintin.contactscompose.view.ContactRow
-import com.jintin.contactscompose.view.LoadingView
 import com.jintin.contactscompose.view.FilterHeaderView
+import com.jintin.contactscompose.view.LoadingView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -2,6 +2,10 @@
 
 ContactsCompose is a demo contact app written entirely in Jetpack Compose with hardcoded data.
 
+## Preview
+
+![](./README/preview.png)
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at <https://github.com/Jintin/ContactsCompose>.
