@@ -1,6 +1,12 @@
 # ContactsCompose
 
+[![CircleCI](https://circleci.com/gh/Jintin/ContactsCompose.svg?style=shield)](https://circleci.com/gh/Jintin/ContactsCompose)
+
 ContactsCompose is a demo contact app written entirely in Jetpack Compose with hardcoded data.
+
+## Preview
+
+![](./README/preview.png)
 
 ## Contributing
 
