@@ -1,7 +1,6 @@
 package com.jintin.contactscompose.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jintin.contactscompose.data.ContactData
@@ -15,13 +14,12 @@ class MainViewModel @Inject constructor(
     private val repo: ContactRepo
 ) : ViewModel() {
 
-    private var list = emptyList<ContactData>()
-    private val _listLiveData = MutableLiveData<List<ContactData>>()
-    val listLiveData: LiveData<List<ContactData>> = _listLiveData
+    var list = mutableStateOf(listOf<ContactData>())
+        private set
 
-    private var filter: String = ""
-    private val _filterLiveData = MutableLiveData<String>()
-    val filterLiveData: LiveData<String> = _filterLiveData
+    var filter = mutableStateOf("")
+        private set
+    private var oriList = listOf<ContactData>()
 
     init {
         getData()
@@ -29,19 +27,18 @@ class MainViewModel @Inject constructor(
 
     private fun getData() {
         viewModelScope.launch {
-            list = repo.getList()
+            oriList = repo.getList()
             updateData()
         }
     }
 
     private fun updateData() {
-        _listLiveData.value =
-            list.filter { it.name.contains(filter) || it.number.contains(filter) }
+        list.value =
+            oriList.filter { it.name.contains(filter.value) || it.number.contains(filter.value) }
     }
 
     fun updateFilter(filter: String) {
-        this.filter = filter
-        _filterLiveData.value = filter
+        this.filter.value = filter
         updateData()
     }
 }
