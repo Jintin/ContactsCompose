@@ -14,7 +14,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.unit.dp
 import com.jintin.contactscompose.data.ContactData
 import com.jintin.contactscompose.ui.theme.ContactsComposeTheme
@@ -32,12 +31,13 @@ class MainActivity : AppCompatActivity() {
 
         setContent {
             val viewModel by viewModels<MainViewModel>()
-            val list: List<ContactData> by viewModel.listLiveData.observeAsState(emptyList())
-            val filter: String by viewModel.filterLiveData.observeAsState("")
+            val list: List<ContactData> by viewModel.list
+            val filter: String by viewModel.filter
 
             ContactsComposeTheme {
                 Surface(
-                    color = MaterialTheme.colors.background) {
+                    color = MaterialTheme.colors.background
+                ) {
                     ContactList(list, filter) {
                         viewModel.updateFilter(it)
                     }
