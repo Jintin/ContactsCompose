@@ -68,4 +68,3 @@ fun ContactList(list: List<ContactData>, filter: String, filterChange: (String) 
         }
     }
 }
-
