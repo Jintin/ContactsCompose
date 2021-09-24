@@ -1,4 +1,4 @@
-package com.jintin.contactscompose.view
+package com.jintin.contactscompose.ui.view
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,11 +11,11 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun LoadingView() {
+fun Hint(text: String) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text("Empty list for now, wait for a sec!!", Modifier.padding(16.dp))
+        Text(text, Modifier.padding(16.dp))
     }
 }

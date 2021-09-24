@@ -14,11 +14,10 @@ class MainViewModel @Inject constructor(
     private val repo: ContactRepo
 ) : ViewModel() {
 
-    var list = mutableStateOf(listOf<ContactData>())
-        private set
+    val list = mutableStateOf(listOf<ContactData>())
 
-    var filter = mutableStateOf("")
-        private set
+    val filter = mutableStateOf("")
+
     private var oriList = listOf<ContactData>()
 
     init {
