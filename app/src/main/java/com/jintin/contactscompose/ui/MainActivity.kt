@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 }
 
 @Composable
-fun ContactList(list: List<ContactData>, filter: String, filterChange: (String) -> Unit) {
+private fun ContactList(list: List<ContactData>, filter: String, filterChange: (String) -> Unit) {
     Column {
         SearchBar(filter, filterChange, Modifier.padding(8.dp))
 
