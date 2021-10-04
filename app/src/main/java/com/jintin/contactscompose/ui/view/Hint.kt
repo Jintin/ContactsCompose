@@ -21,7 +21,7 @@ fun Hint(text: String) {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun HintPreview() {
     Hint("Show some text")
