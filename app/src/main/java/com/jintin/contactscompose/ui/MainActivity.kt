@@ -13,6 +13,7 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.jintin.contactscompose.data.ContactData
@@ -31,8 +32,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            val list: List<ContactData> by viewModel.list
-            val filter: String by viewModel.filter
+            val list: List<ContactData> by viewModel.list.observeAsState(emptyList())
+            val filter: String by viewModel.filter.observeAsState("")
 
             ContactsTheme {
                 Surface {
