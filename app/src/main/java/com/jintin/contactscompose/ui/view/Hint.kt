@@ -7,6 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
@@ -18,4 +19,10 @@ fun Hint(text: String) {
     ) {
         Text(text, Modifier.padding(16.dp))
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HintPreview() {
+    Hint("Show some text")
 }
