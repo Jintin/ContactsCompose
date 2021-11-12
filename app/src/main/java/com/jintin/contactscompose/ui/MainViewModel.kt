@@ -15,7 +15,6 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
 
     val list = MutableLiveData<List<ContactData>>() //mutableStateOf(listOf<ContactData>())
-
     val filter = MutableLiveData<String>()// mutableStateOf("")
 
     private var oriList = listOf<ContactData>()
